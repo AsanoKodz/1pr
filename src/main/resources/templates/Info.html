@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Калькулятор</title>
+</head>
+<body>
+<h1>Считаем</h1>
+<form method="post" action="/about">
+    <input type="text" name="a">
+    <select name="mod" id="mod">
+        <option value="a1">Умножение</option>
+        <option value="a2">Вычитание</option>
+        <option value="a3">Деление</option>
+        <option value="a4">Сложение</option>
+    </select>
+    <input type="text" name="b">
+    <input type="submit" value="=">
+    <a th:text="${temt}"></a>
+</form>
+<a href="home">Перети на домашнюю</a>
+</body>
+</html>
