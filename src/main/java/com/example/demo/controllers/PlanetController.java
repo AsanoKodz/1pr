@@ -14,7 +14,7 @@ import java.util.List;
 public class PlanetController {
     @Autowired
     PlanetRepository planetRepository;
-
+    // коммент
     @GetMapping("/")
     public String planet(Model model){
         Iterable<Planet> planetIterable =  planetRepository.findAll();
