@@ -78,7 +78,7 @@ public class StarController {
     }
 
     @GetMapping ("/detail/{id}/upd")
-    public String updateView(
+    public String updateStar(
             @PathVariable Long id, Model model)
     {
         model.addAttribute("object", starRepository.findById(id).orElseThrow());

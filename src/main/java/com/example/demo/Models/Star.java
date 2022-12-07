@@ -38,7 +38,7 @@ public class Star {
     }
 
     public void setname(String name) {
-        name = name;
+        this.name = name;
     }
 
     public String getclassstar() {
@@ -46,7 +46,7 @@ public class Star {
     }
 
     public void setclassstar(String classstar) {
-        classstar = classstar;
+        this.classstar = classstar;
     }
 
     public Integer getlumen() {
@@ -54,6 +54,6 @@ public class Star {
     }
 
     public void setlumen(Integer lumen) {
-        lumen = lumen;
+        this.lumen = lumen;
     }
 }

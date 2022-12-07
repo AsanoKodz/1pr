@@ -46,7 +46,7 @@ public class Sputnik {
     }
 
     public void setname(String name) {
-        name = name;
+        this.name = name;
     }
 
     public String getplaneta() {
@@ -54,7 +54,7 @@ public class Sputnik {
     }
 
     public void setplaneta(String planeta) {
-        planeta = planeta;
+        this.planeta = planeta;
     }
 
     public Double getves() {
@@ -62,7 +62,7 @@ public class Sputnik {
     }
 
     public void setves(Double ves) {
-        ves = ves;
+        this.ves = ves;
     }
 
     public String getstrana() {
@@ -70,15 +70,15 @@ public class Sputnik {
     }
 
     public void setstrana(String strana) {
-        strana = strana;
+        this.strana = strana;
     }
 
-    public Double getYears() {
+    public Double getyears() {
         return years;
     }
 
     public void setyears(Double years) {
-        years = years;
+        this.years = years;
     }
 }
 

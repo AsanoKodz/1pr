@@ -1,7 +1,6 @@
 package com.example.demo.controllers;
 
 import com.example.demo.Models.Sputnik;
-import com.example.demo.Models.Star;
 import com.example.demo.Repository.SputnikRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -65,6 +64,44 @@ public class SputnikController {
         Sputnik sputnik_obj = sputnikRepository.findById(id).orElseThrow();
         model.addAttribute("one_sputnik", sputnik_obj);
         return "sputnik/info";
+    }
+
+    @PostMapping("/detail/{id}/del")
+    public String delSputnik(@PathVariable Long id)
+    {
+        Sputnik sputnik_obj = sputnikRepository.findById(id).orElseThrow();
+        sputnikRepository.delete(sputnik_obj);
+        return "redirect:/sputnik/";
+    }
+
+    @GetMapping ("/detail/{id}/upd")
+    public String updateSputnik(
+            @PathVariable Long id, Model model)
+    {
+        model.addAttribute("object", sputnikRepository.findById(id).orElseThrow());
+        return "sputnik/update";
+    }
+
+
+    @PostMapping("/detail/{id}/upd")
+    public  String update(
+            @PathVariable Long id,
+            @RequestParam String name,
+            @RequestParam String planeta,
+            @RequestParam Double ves,
+            @RequestParam String strana,
+            @RequestParam Double years
+    )
+    {
+        Sputnik sputnik = sputnikRepository.findById(id).orElseThrow();
+
+        sputnik.setname(name);
+        sputnik.setplaneta(planeta);
+        sputnik.setves(ves);
+        sputnik.setstrana(strana);
+        sputnik.setyears(years);
+        sputnikRepository.save(sputnik);
+        return "redirect:/sputnik/detail/" + sputnik.getid();
     }
 
 }

@@ -20,7 +20,11 @@
     <h2 th:text="'Страна, запустившая этот спутник : '+${one_sputnik.strana}"></h2>
     <h2 th:text="'Год запуска : '+${one_sputnik.years}+' год'"></h2>
 </div>
-<a class="btn btn-danger" href="/sputnik/">Назад</a>
+    <a th:href="'/sputnik/detail/'+${one_sputnik.id}+'/upd'" class="btn btn-warning">Редактировать</a>
+    <form th:action="'/sputnik/detail/'+${one_sputnik.id}+'/del'" method="post">
+        <button type="submit" class="btn btn-danger">Удалить</button>
+    </form>
+<a class="btn btn-success" href="/sputnik/">Назад</a>
 </div>
 </body>
 </html>

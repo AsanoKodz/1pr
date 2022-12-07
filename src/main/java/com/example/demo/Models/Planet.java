@@ -46,7 +46,7 @@ public class Planet {
     }
 
     public void setname(String name) {
-        name = name;
+        this.name = name;
     }
 
     public Double getrasstotsol() {
@@ -54,7 +54,7 @@ public class Planet {
     }
 
     public void setrasstotsol(Double rasstotsol) {
-        rasstotsol = rasstotsol;
+        this.rasstotsol = rasstotsol;
     }
 
     public Double getdiametr() {
@@ -62,7 +62,7 @@ public class Planet {
     }
 
     public void setdiametr(Double diametr) {
-        diametr = diametr;
+        this.diametr = diametr;
     }
 
     public Double getprodgoda() {
@@ -70,7 +70,7 @@ public class Planet {
     }
 
     public void setprodgoda(Double prodgoda) {
-        prodgoda = prodgoda;
+        this.prodgoda = prodgoda;
     }
 
     public Integer getkolsput() {
@@ -78,6 +78,6 @@ public class Planet {
     }
 
     public void setkolsput(Integer kolsput) {
-        kolsput = kolsput;
+        this.kolsput = kolsput;
     }
 }

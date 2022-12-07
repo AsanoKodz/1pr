@@ -14,7 +14,6 @@ import java.util.List;
 public class PlanetController {
     @Autowired
     PlanetRepository planetRepository;
-    // коммент
     @GetMapping("/")
     public String planet(Model model){
         Iterable<Planet> planetIterable =  planetRepository.findAll();
@@ -64,5 +63,42 @@ public class PlanetController {
         Planet planet_obj = planetRepository.findById(id).orElseThrow();
         model.addAttribute("one_planet", planet_obj);
         return "planet/info";
+    }
+
+    @PostMapping("/detail/{id}/del")
+    public String delPlanet(@PathVariable Long id)
+    {
+        Planet planet_obj = planetRepository.findById(id).orElseThrow();
+        planetRepository.delete(planet_obj);
+        return "redirect:/planet/";
+    }
+
+    @GetMapping ("/detail/{id}/upd")
+    public String updatePlanet(
+            @PathVariable Long id, Model model)
+    {
+        model.addAttribute("object", planetRepository.findById(id).orElseThrow());
+        return "planet/update";
+    }
+
+    @PostMapping("/detail/{id}/upd")
+    public  String update(
+            @PathVariable Long id,
+            @RequestParam String name,
+            @RequestParam Double rasstotsol,
+            @RequestParam Double diametr,
+            @RequestParam Double prodgoda,
+            @RequestParam Integer kolsput
+    )
+    {
+        Planet planet = planetRepository.findById(id).orElseThrow();
+
+        planet.setname(name);
+        planet.setrasstotsol(rasstotsol);
+        planet.setdiametr(diametr);
+        planet.setprodgoda(prodgoda);
+        planet.setkolsput(kolsput);
+        planetRepository.save(planet);
+        return "redirect:/planet/detail/" + planet.getid();
     }
 }
