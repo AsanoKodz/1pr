@@ -1,19 +1,27 @@
 <div th:fragment="headerMain">
-<div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-  <a href="/static" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
-    <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-  </a>
+    <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+        <a href="/" class="d-flex align-items-center mb-2 mb-lg-0 text-dark text-decoration-none">
+            <svg class="bi me-2" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
+        </a>
 
-  <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-    <li><a href="/home" class="nav-link px-2 link-secondary">Домашняя страница</a></li>
-    <li><a href="/star/" class="nav-link px-2 link-dark">Список звезд</a></li>
-    <li><a href="/planet/" class="nav-link px-2 link-dark">Планеты</a></li>
-    <li><a href="/sputnik/" class="nav-link px-2 link-dark">Список спутников</a></li>
-  </ul>
-
-  <form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
-    <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-  </form>
-
-</div>
+        <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+            <li><a href="/home/" class="nav-link px-2 link-secondary">Домашняя страница</a></li>
+            <li> <a href="/check/" class="nav-link px-2 link-secondary">Перейти к истории</a></li>
+            <li><a href="/colorproduct/" class="nav-link px-2 link-secondary">Перейти к аннотации</a></li>
+            <li> <a href="/delivery/" class="nav-link px-2 link-secondary">Перейти к фондам</a></li>
+            <li><a href="/inventorycontrol/" class="nav-link px-2 link-secondary">Перейти к контролю заказов</a></li>
+            <li><a href="/order/" class="nav-link px-2 link-secondary">Перейти к заказам</a></li>
+            <li><a href="/product/" class="nav-link px-2 link-secondary">Перейти к книгам</a></li>
+            <li><a href="/sizeproduct/" class="nav-link px-2 link-secondary">Перейти к авторам</a></li>
+            <li><a href="/subdivision/" class="nav-link px-2 link-secondary">Перейти к разделам</a></li>
+            <li><a href="/subdivisionreporting/" class="nav-link px-2 link-secondary">Перейти к </a></li>
+            <li><a href="/suppliers/" class="nav-link px-2 link-secondary">Перейти к поставщикам</a></li>
+            <li> <a href="/typeproduct/" class="nav-link px-2 link-secondary">Перейти к жанрам книг</a></li>
+            <li>
+                <form th:action="@{/logout}" method="post">
+                    <input type="submit" class="btn btn-danger" value="Выход"/>
+                </form>
+            </li>
+        </ul>
+    </div>
 </div>
